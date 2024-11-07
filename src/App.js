@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+// src/AppRouter.js
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Login from './components/login';
+import Register from './components/Register';
+import Home from './components/Home';
+import Dashboard from './components/Dashboard';
+import BlockUser from './components/Blockuser';
+import UploadPhoto from './components/UploadPhoto';
+import Product from './components/Product';
+const App = () => {
+    return (
+        <Router>
+            <Routes>
+                <Route path="/login" element={<Login />} />
+                <Route path="/register" element={<Register />} />
+                <Route path='/home' element={<Home/>}/>  
+                <Route path='/dashboard' element={<Dashboard/>}/>  
+                <Route path='/blockuser' element={<BlockUser/>}/> 
+                <Route path='/uploadphoto' element={<UploadPhoto/>}/> 
+                <Route path="/product" element={<Product />} />
+                <Route path="/" element={<Login />} /> {/* Default route ke login */}
+            </Routes>
+        </Router>
+    );
+};
 
 export default App;

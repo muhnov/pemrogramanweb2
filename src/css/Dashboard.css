@@ -1,0 +1,91 @@
+/* src/components/Dashboard.css */
+.dashboard-container {
+    padding: 20px;
+    text-align: center;
+}
+
+.dashboard-title {
+    font-size: 2rem;
+    color: #333a;
+    margin-bottom: 20px;
+}
+
+.dashboard-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.dashboard-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.logout {
+    background-color: #d9534f;
+    
+}
+a {
+    text-decoration: none;
+    color: white;
+}
+.back {
+    background-color: #5bc0de;
+}
+
+.dashboard-content {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.dashboard-card {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 200px;
+    text-align: center;
+}
+
+.dashboard-card h2 {
+    font-size: 1.5rem;
+    color: #555;
+}
+
+.dashboard-card p {
+    color: #777;
+}
+
+.card-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.upload {
+    background-color: #5cb85c;
+}
+
+.edit {
+    background-color: #f0ad4e;
+}
+
+.delete {
+    background-color: #d9534f;
+}
+
+.block {
+    background-color: #6c757d;
+}
+
+.dashboard-button:hover {
+    opacity: 0.8;
+}
+
