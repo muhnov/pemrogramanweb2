@@ -36,7 +36,7 @@ function Home() {
                 <nav className="navbar">
                     <a href="#">Home</a>
                     <a href="/product">Products</a>
-                    <a href="#">About</a>
+                    <a href="/about">About</a>
                 </nav>
                 <div className="profile" onClick={toggleProfileMenu}>
                     Profile ▾

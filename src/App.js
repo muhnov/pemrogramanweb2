@@ -8,6 +8,7 @@ import Dashboard from './components/Dashboard';
 import BlockUser from './components/Blockuser';
 import UploadPhoto from './components/UploadPhoto';
 import Product from './components/Product';
+import About from './components/About';
 const App = () => {
     return (
         <Router>
@@ -19,6 +20,7 @@ const App = () => {
                 <Route path='/blockuser' element={<BlockUser/>}/> 
                 <Route path='/uploadphoto' element={<UploadPhoto/>}/> 
                 <Route path="/product" element={<Product />} />
+                <Route path="/about" element={<About/>} />
                 <Route path="/" element={<Login />} /> {/* Default route ke login */}
             </Routes>
         </Router>
