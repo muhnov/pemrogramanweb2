@@ -1,4 +1,16 @@
-/* src/css/Product.css */
+/* Product.css */
+
+/* Container to handle layout */
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #f4f4f9;
+    color: #333;
+    padding: 0;
+}
+
+/* Header styling */
 .header {
     display: flex;
     align-items: center;
@@ -6,6 +18,9 @@
     padding: 15px 30px;
     background-color: #333;
     color: #fff;
+    position: relative;
+    z-index: 10;
+    margin-bottom: 20px;
 }
 
 .logo {
@@ -14,12 +29,13 @@
     color: #fff;
 }
 
+/* Navbar styling (same as Home.css) */
 .navbar {
     display: flex;
     gap: 20px;
 }
 
-.nav-link {
+.navbar a {
     color: #fff;
     text-decoration: none;
     font-size: 1rem;
@@ -28,10 +44,11 @@
     transition: background-color 0.3s;
 }
 
-.nav-link:hover {
+.navbar a:hover {
     background-color: #444;
 }
 
+/* Profile section styling */
 .profile {
     position: relative;
     color: #fff;
@@ -51,9 +68,10 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     overflow: hidden;
     margin-top: 10px;
+    z-index: 20;
 }
 
-.profile-menu-item {
+.profile-menu a {
     display: block;
     color: #fff;
     padding: 10px 20px;
@@ -62,7 +80,7 @@
     transition: background-color 0.3s;
 }
 
-.profile-menu-item:hover {
+.profile-menu a:hover {
     background-color: #555;
 }
 
@@ -70,32 +88,44 @@
     color: #ff4d4d;
 }
 
-.product-content {
-    text-align: center;
-    padding: 20px;
+/* Content Styling */
+.content {
+    flex: 1;
+    padding: 0;
 }
 
+/* Product Gallery Grid Styling */
 .product-gallery {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     gap: 20px;
-    justify-content: center;
     margin-top: 20px;
 }
 
+.main {
+    text-align:center;
+}
 .product-item {
-    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    padding: 15px;
     border-radius: 8px;
-    padding: 10px;
-    width: 200px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
-    transition: transform 0.3s;
+    transition: transform 0.2s;
+}
+
+.product-item h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+
+}
+
+.product-item img {
+    width: 250px;
+    height: auto;
+    border-radius: 5px;
 }
 
 .product-item:hover {
     transform: scale(1.05);
-}
-
-.product-item img {
-    max-width: 100%;
-    border-radius: 8px;
 }

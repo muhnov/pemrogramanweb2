@@ -5,6 +5,7 @@ import '../css/product.css';
 
 function Product() {
     const [isProfileMenuOpen, setProfileMenuOpen] = useState(false);
+
     const toggleProfileMenu = () => {
         setProfileMenuOpen(!isProfileMenuOpen);
     };
@@ -16,7 +17,9 @@ function Product() {
     return (
         <div className="product-container"> 
             <header className="header">
-                <div className="logo">Logo</div>
+            <div className="logo">
+                <img src='/udblogo.png'></img>
+                </div>
                 <nav className="navbar">
                     <Link to="/home" className="nav-link">Home</Link>
                     <Link to="/product" className="nav-link">Products</Link>
@@ -35,18 +38,43 @@ function Product() {
             </header>
             
             <section className="product-content">
-                <h1>Our Products</h1>
-                <p>Explore a variety of products we offer!</p>
+            <div className='main'>
+            <h1>Gallery UDB</h1>
+            <p>Explore a variety of products we offer!</p>
+            </div>
                 <div className="product-gallery">
                     <div className="product-item">
                         <h3>Product A</h3>
-                        <img src="/productA.jpg" alt="Product A" />
+                        <img src="/udb1.jpg" alt="Product A" />
                     </div>
                     <div className="product-item">
                         <h3>Product B</h3>
-                        <img src="/productB.jpg" alt="Product B" />
+                        <img src="/udb1.jpg" alt="Product B" />
                     </div>
-                    {/* Add more product items as needed */}
+                    <div className="product-item">
+                        <h3>Product C</h3>
+                        <img src="/udb1.jpg" alt="Product C" />
+                    </div>
+                    <div className="product-item">
+                        <h3>Product D</h3>
+                        <img src="/udb1.jpg" alt="Product D" />
+                    </div>
+                    <div className="product-item">
+                        <h3>Product E</h3>
+                        <img src="/udb1.jpg" alt="Product E" />
+                    </div>
+                    <div className="product-item">
+                        <h3>Product F</h3>
+                        <img src="/udb1.jpg" alt="Product F" />
+                    </div>
+                    <div className="product-item">
+                        <h3>Product G</h3>
+                        <img src="/udb1.jpg" alt="Product G" />
+                    </div>
+                    <div className="product-item">
+                        <h3>Product H</h3>
+                        <img src="/udb1.jpg" alt="Product H" />
+                    </div>
                 </div>
             </section>
         </div>

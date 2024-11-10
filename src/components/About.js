@@ -15,7 +15,9 @@ function About() {
     return (
         <div className="about-container">
             <header className="header">
-                <div className="logo">Logo</div>
+                <div className="logo">
+                <img src='/udblogo.png'></img>
+                </div>
                 <nav className="navbar">
                     <Link to="/home" className="nav-link">Home</Link>
                     <Link to="/product" className="nav-link">Products</Link>

@@ -32,7 +32,9 @@ function Home() {
     return (
         <div className="container"> 
             <header className="header">
-                <div className="logo">Logo</div>
+            <div className="logo">
+                <img src='/udblogo.png'></img>
+                </div>
                 <nav className="navbar">
                     <a href="#">Home</a>
                     <a href="/product">Products</a>
@@ -42,7 +44,7 @@ function Home() {
                     Profile ▾
                     {isProfileMenuOpen && (
                         <div className="profile-menu" onMouseLeave={closeProfileMenu}>
-                            <a href="#">Edit Profile</a>
+                            <a href="/editprofile">Edit Profile</a>
                             <a href="#">Comment</a>
                             <a id="logout" href="/">Logout</a>
                         </div>

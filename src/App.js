@@ -9,6 +9,7 @@ import BlockUser from './components/Blockuser';
 import UploadPhoto from './components/UploadPhoto';
 import Product from './components/Product';
 import About from './components/About';
+import EditProfile from './components/Editprofile';
 const App = () => {
     return (
         <Router>
@@ -21,6 +22,7 @@ const App = () => {
                 <Route path='/uploadphoto' element={<UploadPhoto/>}/> 
                 <Route path="/product" element={<Product />} />
                 <Route path="/about" element={<About/>} />
+                <Route path="/editprofile" element={<EditProfile/>} />
                 <Route path="/" element={<Login />} /> {/* Default route ke login */}
             </Routes>
         </Router>
