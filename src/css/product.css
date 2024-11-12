@@ -1,22 +1,23 @@
 /* Product.css */
 
 /* Container to handle layout */
-.container {
+.container-product {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background-color: #f4f4f9;
+    background: linear-gradient(180deg, #7d5867 0, #774d64 10%, #6e4260 20%, #63375e 30%, #552b5b 40%, #441f59 50%, #2e1557 60%, #081056 70%, #000c56 80%, #000355 90%, #000054 100%);
     color: #333;
     padding: 0;
 }
 
 /* Header styling */
-.header {
+.header-product {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 15px 30px;
-    background-color: #333;
+    padding: 10px 15px;
+    background-color: rgb(125, 88, 103);
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.5);
     color: #fff;
     position: relative;
     z-index: 10;
@@ -30,12 +31,16 @@
 }
 
 /* Navbar styling (same as Home.css) */
-.navbar {
+.navbar-product {
     display: flex;
     gap: 20px;
+    padding: 5px 30px;
+    backdrop-filter: blur(30px);
+    box-shadow: 0px 0px 30px rgba(227,228,237,0.37);
+    border: 2px solid rgba(225,225,225,0.18);
 }
 
-.navbar a {
+.navbar-product a {
     color: #fff;
     text-decoration: none;
     font-size: 1rem;
@@ -44,7 +49,7 @@
     transition: background-color 0.3s;
 }
 
-.navbar a:hover {
+.navbar-product a:hover {
     background-color: #444;
 }
 
@@ -103,8 +108,14 @@
 }
 
 .main {
-    text-align:center;
+    text-align: center;
+    color: white;
 }
+
+.main p {
+    color: white;
+}
+
 .product-item {
     background-color: #f9f9f9;
     padding: 15px;
@@ -117,15 +128,34 @@
 .product-item h3 {
     font-size: 18px;
     margin-bottom: 10px;
-
 }
 
 .product-item img {
-    width: 250px;
+    width: 100%;
+    max-width: 250px;
     height: auto;
     border-radius: 5px;
 }
 
 .product-item:hover {
     transform: scale(1.05);
+}
+
+/* Responsive Grid Layout */
+@media (max-width: 1200px) {
+    .product-gallery {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .product-gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .product-gallery {
+        grid-template-columns: 1fr;
+    }
 }

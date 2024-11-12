@@ -30,12 +30,12 @@ function Home() {
     };
 
     return (
-        <div className="container"> 
-            <header className="header">
+        <div className="container-home"> 
+            <header className="header-home">
             <div className="logo">
                 <img src='/udblogo.png'></img>
                 </div>
-                <nav className="navbar">
+                <nav className="navbar-home">
                     <a href="#">Home</a>
                     <a href="/product">Products</a>
                     <a href="/about">About</a>
@@ -43,7 +43,7 @@ function Home() {
                 <div className="profile" onClick={toggleProfileMenu}>
                     Profile ▾
                     {isProfileMenuOpen && (
-                        <div className="profile-menu" onMouseLeave={closeProfileMenu}>
+                        <div className="profile-menu-home" onMouseLeave={closeProfileMenu}>
                             <a href="/editprofile">Edit Profile</a>
                             <a href="#">Comment</a>
                             <a id="logout" href="/">Logout</a>
@@ -82,7 +82,7 @@ function Home() {
                 </div>
             </section>
 
-            <footer className="footer">
+            <footer className="footer-home">
                 <p>&copy; 2024 Gallery Product UDB. All Rights Reserved.</p>
             </footer>
 

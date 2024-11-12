@@ -1,58 +1,78 @@
+// src/components/ProductDetailPopup.js
 import React, { useState } from 'react';
-import '../css/EditProfile.css';
+import { useNavigate } from 'react-router-dom';
+import '../css/ProductDetail.css';
 
-const EditProfile = () => {
-    const [name, setName] = useState('');
-    const [email, setEmail] = useState('');
-    const [bio, setBio] = useState('');
+function ProductDetailPopup({ image, title, description }) {
+    const [isEditingProfile, setIsEditingProfile] = useState(false);
+    const [email, setEmail] = useState('user@example.com');
+    const [username, setUsername] = useState('User Name');
+    const [password, setPassword] = useState('');
 
-    const handleSave = () => {
-        // Simpan perubahan (misalnya, panggil API untuk menyimpan data)
-        console.log('Data disimpan:', { name, email, bio });
+    const navigate = useNavigate(); // Initialize navigate hook
+
+    const handleProfileEdit = () => {
+        setIsEditingProfile(true);
+    };
+
+    const handleProfileSave = () => {
+        setIsEditingProfile(false);
+        // Save logic can go here
+        console.log("Profile updated:", { email, username, password });
+    };
+
+    // Navigate to home on close
+    const handleClose = () => {
+        navigate("/home"); // Redirect to homepage
     };
 
     return (
-        <div className="edit-profile-container">
-            <h2>Edit Profile</h2>
-            <form className="edit-profile-form">
-                <div className="form-group">
-                    <label htmlFor="name">Name</label>
-                    <input
-                        type="text"
-                        id="name"
-                        value={name}
-                        onChange={(e) => setName(e.target.value)}
-                        placeholder="Enter your name"
-                    />
+        <div className="popup-overlay">
+            <div className="popup-content">
+                <button className="close-btn" onClick={handleClose}>✖</button>
+                <div className="popup-image-container">
+                    <img src={image} alt={title} className="popup-image" />
                 </div>
+                <h2 className="popup-title">{title}</h2>
+                <p className="popup-description">{description}</p>
 
-                <div className="form-group">
-                    <label htmlFor="email">Email</label>
-                    <input
-                        type="email"
-                        id="email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        placeholder="Enter your email"
-                    />
+                <div className="profile-section">
+                    {isEditingProfile ? (
+                        <div className="profile-edit-section">
+                            <input 
+                                type="text"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                                placeholder="Enter new email"
+                                className="profile-input"
+                            />
+                            <input 
+                                type="text"
+                                value={username}
+                                onChange={(e) => setUsername(e.target.value)}
+                                placeholder="Enter new username"
+                                className="profile-input"
+                            />
+                            <input 
+                                type="password"
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
+                                placeholder="Enter new password"
+                                className="profile-input"
+                            />
+                            <button onClick={handleProfileSave} className="profile-save-btn">Save</button>
+                        </div>
+                    ) : (
+                        <div className="profile-view-section">
+                            <h3 className="profile-email">Email: {email}</h3>
+                            <h3 className="profile-username">Username: {username}</h3>
+                            <button onClick={handleProfileEdit} className="profile-edit-btn">Edit Profile</button>
+                        </div>
+                    )}
                 </div>
-
-                <div className="form-group">
-                    <label htmlFor="bio">Bio</label>
-                    <textarea
-                        id="bio"
-                        value={bio}
-                        onChange={(e) => setBio(e.target.value)}
-                        placeholder="Tell us about yourself"
-                    />
-                </div>
-
-                <button type="button" onClick={handleSave} className="save-btn">
-                    Save Changes
-                </button>
-            </form>
+            </div>
         </div>
     );
-};
+}
 
-export default EditProfile;
+export default ProductDetailPopup;

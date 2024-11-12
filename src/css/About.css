@@ -1,27 +1,91 @@
-.header {
+.container-about {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: linear-gradient(180deg, #7d5867 0, #774d64 10%, #6e4260 20%, #63375e 30%, #552b5b 40%, #441f59 50%, #2e1557 60%, #081056 70%, #000c56 80%, #000355 90%, #000054 100%);
+    color: #333;
+}
+
+.about-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    color: white;
+}
+
+.about-text {
+    flex: 1;
+    max-width: 600px;
+    padding: 20px;
+    text-align: center;
+}
+
+.about-text h1,
+.about-section h2 {
+    color: #ffecb3;
+}
+
+.about-text p {
+    color: #ddd;
+}
+
+.about-image {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.about-image img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+    }
+
+    .about-text, .about-image {
+        max-width: 100%;
+        padding: 10px;
+    }
+
+    .about-image img {
+        max-width: 80%;
+    }
+}
+
+/* Header and Navbar styling (unchanged) */
+.header-about {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 15px 30px;
-    background-color: #333;
+    padding: 10px 15px;
+    background-color: rgb(125, 88, 103);
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.5);
     color: #fff;
 }
 
-.logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #fff;
-}
-
-.navbar {
+.navbar-about {
     display: flex;
     gap: 20px;
+    padding: 5px 30px;
+    backdrop-filter: blur(30px);
+    box-shadow: 0px 0px 30px rgb(227,228,237,0.37);
+    border: 2px solid rgba(225,225,225,0.18);
 }
 
 .nav-link {
     color: #fff;
     text-decoration: none;
-    font-size: 1rem;
     padding: 5px 10px;
     border-radius: 5px;
     transition: background-color 0.3s;
@@ -37,22 +101,18 @@
     cursor: pointer;
 }
 
-.profile-name {
-    font-size: 1rem;
-}
-
-.profile-menu {
+.profile-menu-about {
     position: absolute;
     top: 100%;
     right: 0;
-    background-color: #444;
+    background-color: rgba(179, 179, 179, 0.5);
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    overflow: hidden;
     margin-top: 10px;
+    overflow: hidden;
 }
 
-.profile-menu-item {
+.profile-menu-about a {
     display: block;
     color: #fff;
     padding: 10px 20px;
@@ -67,13 +127,4 @@
 
 #logout {
     color: #ff4d4d;
-}
-
-.about-content {
-    text-align: center;
-    padding: 20px;
-}
-
-.about-section {
-    margin: 20px 0;
 }

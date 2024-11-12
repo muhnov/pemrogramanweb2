@@ -1,24 +1,26 @@
 /* src/css/Home.css */
 
-.container {
+.container-home {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-color: #f4f4f9;
+  background: linear-gradient(180deg, #7d5867 0, #774d64 10%, #6e4260 20%, #63375e 30%, #552b5b 40%, #441f59 50%, #2e1557 60%, #081056 70%, #000c56 80%, #000355 90%, #000054 100%);
   color: #333;
-  padding: 0; /* Remove padding */
+  padding: 0;
+  /* Remove padding */
 }
 
-.header {
+.header-home {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 15px 30px;
-  background-color: #333;
+  padding: 10px 15px;
+  background-color: rgb(125, 88, 103);
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.5);
   color: #fff;
   position: relative;
   z-index: 10;
-  margin-bottom: 20px; /* Added margin to separate from next section */
+  margin-bottom: 20px;
 }
 
 .logo {
@@ -27,21 +29,29 @@
   color: #fff;
 }
 
-.navbar {
+.navbar-home {
   display: flex;
   gap: 20px;
+  padding: 5px 30px;
+  backdrop-filter: blur(30px);
+  box-shadow: 0px 0px 30px rgb(227,228,237,0.37);
+  border: 2px solid rgba(225,225,225,0.18);
 }
 
-.navbar a {
+.navbar-home a {
   color: #fff;
   text-decoration: none;
   font-size: 1rem;
   padding: 5px 10px;
   border-radius: 5px;
   transition: background-color 0.3s;
+  -webkit-transition: background-color 0.3s;
+  -moz-transition: background-color 0.3s;
+  -ms-transition: background-color 0.3s;
+  -o-transition: background-color 0.3s;
 }
 
-.navbar a:hover {
+.navbar-home a:hover {
   background-color: #444;
 }
 
@@ -55,11 +65,11 @@
   font-size: 1rem;
 }
 
-.profile-menu {
+.profile-menu-home {
   position: absolute;
   top: 100%;
   right: 0;
-  background-color: #444;
+  background-color: rgb(179, 179, 179, 0.5);
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   overflow: hidden;
@@ -67,7 +77,7 @@
   z-index: 20;
 }
 
-.profile-menu a {
+.profile-menu-home a {
   display: block;
   color: #fff;
   padding: 10px 20px;
@@ -76,7 +86,7 @@
   transition: background-color 0.3s;
 }
 
-.profile-menu a:hover {
+.profile-menu-home a:hover {
   background-color: #555;
 }
 
@@ -86,15 +96,15 @@
 
 .content {
   flex: 1;
-  padding: 0; /* Remove padding on content */
+  padding: 0;
 }
 
 .main-image {
   width: 100%;
-  height: 400px; /* Set specific height for the image */
-  position: relative; /* Keep this for the title positioning */
-  overflow: hidden; /* Prevent overflow if needed */
-  margin-bottom: 20px; /* Added margin to separate from gallery */
+  height: 400px;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 20px;
 }
 
 .main-image img {
@@ -112,7 +122,7 @@
   font-size: 2rem;
   font-weight: bold;
   color: #fff;
-  background-color: rgba(0, 0, 0, 0.5);
+  /* background-color: rgba(0, 0, 0, 0.5); */
   padding: 10px;
   border-radius: 5px;
 }
@@ -123,7 +133,7 @@
   gap: 20px;
   flex-wrap: wrap;
   justify-content: center;
-  margin-bottom: 20px; /* Added margin to separate from footer */
+  margin-bottom: 20px;
 }
 
 .gallery-item {
@@ -145,10 +155,14 @@
   border-radius: 8px;
 }
 
-.footer {
-  background-color: #333;
+.footer-home {
+  background-color: rgb(179, 179, 179, 0.6);
   color: #fff;
   text-align: center;
   padding: 15px 0;
   font-size: 0.9rem;
+}
+
+.footer-home p {
+  color: white;
 }

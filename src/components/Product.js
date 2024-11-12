@@ -15,12 +15,12 @@ function Product() {
     };
 
     return (
-        <div className="product-container"> 
-            <header className="header">
+        <div className="container-product"> 
+            <header className="header-product">
             <div className="logo">
                 <img src='/udblogo.png'></img>
                 </div>
-                <nav className="navbar">
+                <nav className="navbar-product">
                     <Link to="/home" className="nav-link">Home</Link>
                     <Link to="/product" className="nav-link">Products</Link>
                     <Link to="/about" className="nav-link">About</Link>
@@ -39,41 +39,53 @@ function Product() {
             
             <section className="product-content">
             <div className='main'>
-            <h1>Gallery UDB</h1>
-            <p>Explore a variety of products we offer!</p>
+            <h1>Gallery Product</h1>
+            <p>Universitas Duta Bangsa Surakarta</p>
             </div>
                 <div className="product-gallery">
                     <div className="product-item">
-                        <h3>Product A</h3>
-                        <img src="/udb1.jpg" alt="Product A" />
+                        <h3>Prestasi</h3>
+                        <img src="/photo/prestasi.jpg" alt="Product A" />
                     </div>
                     <div className="product-item">
-                        <h3>Product B</h3>
-                        <img src="/udb1.jpg" alt="Product B" />
+                        <h3>Prestasi</h3>
+                        <img src="/photo/prestasi1.jpg" alt="Product B" />
                     </div>
                     <div className="product-item">
-                        <h3>Product C</h3>
-                        <img src="/udb1.jpg" alt="Product C" />
+                        <h3>Prestasi</h3>
+                        <img src="/photo/prestasi2.jpg" alt="Product C" />
                     </div>
                     <div className="product-item">
-                        <h3>Product D</h3>
-                        <img src="/udb1.jpg" alt="Product D" />
+                        <h3>Aktivitas</h3>
+                        <img src="/photo/aktivitas.jpg" alt="Product D" />
                     </div>
                     <div className="product-item">
-                        <h3>Product E</h3>
-                        <img src="/udb1.jpg" alt="Product E" />
+                        <h3>Aktivitas</h3>
+                        <img src="/photo/aktivitas1.jpg" alt="Product E" />
                     </div>
                     <div className="product-item">
-                        <h3>Product F</h3>
-                        <img src="/udb1.jpg" alt="Product F" />
+                        <h3>Pendaftaran</h3>
+                        <img src="/photo/pendaftaran.jpg" alt="Product F" />
                     </div>
                     <div className="product-item">
-                        <h3>Product G</h3>
-                        <img src="/udb1.jpg" alt="Product G" />
+                        <h3>Pendaftaran</h3>
+                        <img src="/photo/pendaftaran1.jpg" alt="Product F" />
                     </div>
                     <div className="product-item">
-                        <h3>Product H</h3>
-                        <img src="/udb1.jpg" alt="Product H" />
+                        <h3>Pendaftaran</h3>
+                        <img src="/photo/pendaftaran2.jpg" alt="Product F" />
+                    </div>
+                    <div className="product-item">
+                        <h3>Pendaftaran</h3>
+                        <img src="/photo/pendaftaran3.jpg" alt="Product F" />
+                    </div>
+                    <div className="product-item">
+                        <h3>Pendaftaran</h3>
+                        <img src="/photo/pendaftaran4.jpg" alt="Product F" />
+                    </div>
+                    <div className="product-item">
+                        <h3>Pendaftaran</h3>
+                        <img src="/photo/pendaftaran5.jpg" alt="Product F" />
                     </div>
                 </div>
             </section>
