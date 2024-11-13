@@ -37,15 +37,11 @@ function About() {
             
             <section className="about-content">
                 <div className="about-text">
-                    <h1>About Us</h1>
+                    <h1>Tentang</h1>
                     <p>Welcome to our website! We are dedicated to providing high-quality products that bring joy and inspiration to your life.</p>
                     <div className="about-section">
-                        <h2>Our Mission</h2>
+                        <h2>Tujuan</h2>
                         <p>To deliver exceptional quality and unforgettable experiences through our carefully curated products.</p>
-                    </div>
-                    <div className="about-section">
-                        <h2>Our Vision</h2>
-                        <p>Quality, customer satisfaction, and innovation drive everything we do. We believe in creating lasting value and building meaningful relationships with our customers.</p>
                     </div>
                 </div>
                 <div className="about-image">

@@ -45,7 +45,7 @@ function Home() {
                     {isProfileMenuOpen && (
                         <div className="profile-menu-home" onMouseLeave={closeProfileMenu}>
                             <a href="/editprofile">Edit Profile</a>
-                            <a href="#">Comment</a>
+                            <a href="/coment">Comment</a>
                             <a id="logout" href="/">Logout</a>
                         </div>
                     )}
@@ -60,23 +60,28 @@ function Home() {
                 <div className="gallery">
                     <div className="gallery-item" onClick={() => handleImageClick('Seminar', '/naruto.jpg', 'Description for Seminar')}>
                         <h3>Seminar</h3>
-                        <img src="/naruto.jpg" alt="Product 1" />
+                        <img src="/photo/seminar.jpg" alt="Product 1" />
+                        <p><h3>deskripsi</h3>comment</p>
                     </div>
                     <div className="gallery-item" onClick={() => handleImageClick('Organisasi', '/naruto.jpg', 'Description for Organisasi')}>
                         <h3>Organisasi</h3>
-                        <img src="/naruto.jpg" alt="Product 2" />
+                        <img src="photo/organisasi.jpg" alt="Product 2" />
+                        <p><h3>deskripsi</h3>comment</p>
                     </div>
                     <div className="gallery-item" onClick={() => handleImageClick('Gedung', '/naruto.jpg', 'Description for Gedung')}>
                         <h3>Gedung</h3>
-                        <img src="/naruto.jpg" alt="Product 3" />
+                        <img src="photo/gedung.jpg" alt="Product 3" />
+                        <p><h3>deskripsi</h3>comment</p>
+                    </div>
+                    <div className="gallery-item" onClick={() => handleImageClick('Fasilitas', '/naruto.jpg', 'Description for Fasilitas')}>
+                        <h3>Pameran</h3>
+                        <img src="/photo/pameran.jpg" alt="Product 4" />
+                        <p><h3>deskripsi</h3>comment</p>
                     </div>
                     <div className="gallery-item" onClick={() => handleImageClick('Fasilitas', '/naruto.jpg', 'Description for Fasilitas')}>
                         <h3>Fasilitas</h3>
-                        <img src="/naruto.jpg" alt="Product 4" />
-                    </div>
-                    <div className="gallery-item" onClick={() => handleImageClick('Fasilitas', '/naruto.jpg', 'Description for Fasilitas')}>
-                        <h3>Fasilitas</h3>
-                        <img src="/naruto.jpg" alt="Product 4" />
+                        <img src="/photo/fasilitas.jpg" alt="Product 4" />
+                        <p><h3>deskripsi</h3>comment</p>
                     </div>
 
                 </div>

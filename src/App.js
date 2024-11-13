@@ -10,6 +10,7 @@ import UploadPhoto from './components/UploadPhoto';
 import Product from './components/Product';
 import About from './components/About';
 import EditProfile from './components/Editprofile';
+import HistoryCommentPage from './components/HistoryCommentPage';
 const App = () => {
     return (
         <Router>
@@ -23,6 +24,7 @@ const App = () => {
                 <Route path="/product" element={<Product />} />
                 <Route path="/about" element={<About/>} />
                 <Route path="/editprofile" element={<EditProfile/>} />
+                <Route path="/coment" element={<HistoryCommentPage/>} />
                 <Route path="/" element={<Login />} /> {/* Default route ke login */}
             </Routes>
         </Router>

@@ -1,0 +1,66 @@
+/* src/css/HistoryComment.css */
+.history-comment-container {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.image-section {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.history-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.comment-history-section {
+    flex: 1;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.comment-history-section h2 {
+    margin-bottom: 15px;
+    font-size: 1.5em;
+    color: #333;
+}
+
+.comment-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.comment-item {
+    padding: 10px;
+    border-radius: 6px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.comment-author {
+    font-weight: bold;
+    color: #555;
+}
+
+.comment-text {
+    font-size: 0.95em;
+    color: #444;
+    margin: 5px 0;
+}
+
+.comment-date {
+    font-size: 0.85em;
+    color: #888;
+    text-align: right;
+}
