@@ -1,34 +1,24 @@
 import React from 'react';
-import '../css/UploadPhoto.css';
+import '../css/EditPhoto.css';
 
-function UploadPhoto() {
-    const handleUpload = () => {
-        alert("Upload Foto");
-    };
-
-    const handleCrop = () => {
-        alert("Crop Foto");
-    };
-
-    const handleSave = () => {
-        alert("Foto berhasil disimpan");
-    };
-
-    const handleBack = () => {
-        window.history.back();
-    };
-
+function EditPhoto() {
     return (
-        <div className="upload-photo-container">
-            <h1 className="upload-photo-title">Upload Foto</h1>
-            <div className="upload-photo-actions">
-                <button className="upload-photo-button" onClick={handleUpload}>Upload</button>
-                <button className="upload-photo-button" onClick={handleCrop}>Crop</button>
-                <button className="upload-photo-button" onClick={handleSave}>Save</button>
-                <button className="upload-photo-button back" onClick={handleBack}>Kembali</button>
-            </div>
+        <div className="edit-photo-container">
+            <h1 className="edit-photo-title">Edit Photo</h1>
+            <form className="edit-photo-form">
+                <label htmlFor="photo-title">Photo Title:</label>
+                <input type="text" id="photo-title" name="photo-title" placeholder="Enter new title" />
+                
+                <label htmlFor="photo-description">Description:</label>
+                <textarea id="photo-description" name="photo-description" placeholder="Enter new description"></textarea>
+                
+                <label htmlFor="photo-file">Upload New Photo:</label>
+                <input type="file" id="photo-file" name="photo-file" />
+                
+                <button type="submit" className="edit-button">Save Changes</button>
+            </form>
         </div>
     );
 }
 
-export default UploadPhoto;
+export default EditPhoto;

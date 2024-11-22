@@ -1,43 +1,54 @@
-/* Container Styling */
-.upload-photo-container {
-    padding: 20px;
-    max-width: 500px;
+.edit-photo-container {
+    max-width: 600px;
     margin: 0 auto;
-    text-align: center;
+    padding: 20px;
+    text-align: left;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
 }
 
-.upload-photo-title {
-    font-size: 24px;
-    font-weight: bold;
+.edit-photo-title {
+    text-align: center;
+    font-size: 2rem;
+    color: #333;
     margin-bottom: 20px;
 }
 
-/* Button Styling */
-.upload-photo-actions {
+.edit-photo-form {
     display: flex;
     flex-direction: column;
     gap: 15px;
 }
 
-.upload-photo-button {
+.edit-photo-form label {
+    font-size: 1rem;
+    color: #555;
+}
+
+.edit-photo-form input,
+.edit-photo-form textarea {
     padding: 10px;
-    font-size: 16px;
-    cursor: pointer;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 1rem;
+}
+
+.edit-photo-form textarea {
+    resize: vertical;
+    height: 100px;
+}
+
+.edit-button {
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: white;
     border: none;
     border-radius: 5px;
-    background-color: #007bff;
-    color: #fff;
-    transition: background-color 0.3s ease;
+    cursor: pointer;
 }
 
-.upload-photo-button:hover {
-    background-color: #0056b3;
-}
-
-.upload-photo-button.back {
-    background-color: #6c757d;
-}
-
-.upload-photo-button.back:hover {
-    background-color: #5a6268;
+.edit-button:hover {
+    background-color: #45a049;
 }

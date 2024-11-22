@@ -1,30 +1,37 @@
-import React from 'react';
-
+import React, { useState } from 'react';
 import '../css/Blockuser.css';
 
 function BlockUser() {
-    const users = [
-        { id: 1, name: 'User One' },
-        { id: 2, name: 'User Two' },
-        { id: 3, name: 'User Three' },
-    ];
+    const [users, setUsers] = useState([
+        { id: 1, username: 'userone', email: 'userone@example.com', loginDate: '2024-11-18', blocked: false },
+        { id: 2, username: 'usertwo', email: 'usertwo@example.com', loginDate: '2024-11-17', blocked: false },
+        { id: 3, username: 'userthree', email: 'userthree@example.com', loginDate: '2024-11-16', blocked: false },
+    ]);
 
-    const handleBlockUser = (userId) => {
-        alert(`User ${userId} has been blocked`);
+    const toggleBlockUser = (userId) => {
+        setUsers((prevUsers) =>
+            prevUsers.map((user) =>
+                user.id === userId ? { ...user, blocked: !user.blocked } : user
+            )
+        );
     };
 
     return (
         <div className="block-user-container">
-            <h1 className="block-user-title">Block User</h1>
+            <h1 className="block-user-title">Manage Users</h1>
             <div className="user-list">
                 {users.map((user) => (
                     <div key={user.id} className="user-card">
-                        <span>{user.name}</span>
+                        <div className="user-info">
+                            <h2>{user.username}</h2>
+                            <p>Email: {user.email}</p>
+                            <p>Last Login: {user.loginDate}</p>
+                        </div>
                         <button
-                            className="block-button"
-                            onClick={() => handleBlockUser(user.id)}
+                            className={`toggle-button ${user.blocked ? 'blocked' : ''}`}
+                            onClick={() => toggleBlockUser(user.id)}
                         >
-                            Block
+                            {user.blocked ? 'Unblock' : 'Block'}
                         </button>
                     </div>
                 ))}
