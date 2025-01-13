@@ -1,13 +1,9 @@
 // src/components/Home.js
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import ProductDetailPopup from './ProductDetail';
 import '../css/Home.css';
 
 function Home() {
     const [isProfileMenuOpen, setProfileMenuOpen] = useState(false);
-    const [selectedProduct, setSelectedProduct] = useState(null);
-    const navigate = useNavigate();
 
     const toggleProfileMenu = () => {
         setProfileMenuOpen(!isProfileMenuOpen);
@@ -17,23 +13,11 @@ function Home() {
         setProfileMenuOpen(false);
     };
 
-    const handleImageClick = (title, image, description) => {
-        setSelectedProduct({ title, image, description });
-    };
-
-    const closePopup = () => {
-        setSelectedProduct(null);
-    };
-
-    const navigateToDetailPage = () => {
-        navigate(`/product-details/${selectedProduct.title}`);
-    };
-
     return (
         <div className="container-home"> 
             <header className="header-home">
-            <div className="logo">
-                <img src='/udblogo.png'></img>
+                <div className="logo">
+                    <img src='/udblogo.png' alt="Logo" />
                 </div>
                 <nav className="navbar-home">
                     <a href="#">Home</a>
@@ -58,48 +42,32 @@ function Home() {
                     <h1 className="title">Gallery Product UDB</h1>
                 </div>
                 <div className="gallery">
-                    <div className="gallery-item" onClick={() => handleImageClick('Seminar', '/naruto.jpg', 'Description for Seminar')}>
+                    <div className="gallery-item">
                         <h3>Seminar</h3>
                         <img src="/photo/seminar.jpg" alt="Product 1" />
-                        <p><h3>deskripsi</h3>comment</p>
                     </div>
-                    <div className="gallery-item" onClick={() => handleImageClick('Organisasi', '/naruto.jpg', 'Description for Organisasi')}>
+                    <div className="gallery-item">
                         <h3>Organisasi</h3>
-                        <img src="photo/organisasi.jpg" alt="Product 2" />
-                        <p><h3>deskripsi</h3>comment</p>
+                        <img src="/photo/organisasi.jpg" alt="Product 2" />
                     </div>
-                    <div className="gallery-item" onClick={() => handleImageClick('Gedung', '/naruto.jpg', 'Description for Gedung')}>
+                    <div className="gallery-item">
                         <h3>Gedung</h3>
-                        <img src="photo/gedung.jpg" alt="Product 3" />
-                        <p><h3>deskripsi</h3>comment</p>
+                        <img src="/photo/gedung.jpg" alt="Product 3" />
                     </div>
-                    <div className="gallery-item" onClick={() => handleImageClick('Fasilitas', '/naruto.jpg', 'Description for Fasilitas')}>
+                    <div className="gallery-item">
                         <h3>Pameran</h3>
                         <img src="/photo/pameran.jpg" alt="Product 4" />
-                        <p><h3>deskripsi</h3>comment</p>
                     </div>
-                    <div className="gallery-item" onClick={() => handleImageClick('Fasilitas', '/naruto.jpg', 'Description for Fasilitas')}>
+                    <div className="gallery-item">
                         <h3>Fasilitas</h3>
-                        <img src="/photo/fasilitas.jpg" alt="Product 4" />
-                        <p><h3>deskripsi</h3>comment</p>
+                        <img src="/photo/fasilitas.jpg" alt="Product 5" />
                     </div>
-
                 </div>
             </section>
 
             <footer className="footer-home">
                 <p>&copy; 2024 Gallery Product UDB. All Rights Reserved.</p>
             </footer>
-
-            {selectedProduct && (
-                <ProductDetailPopup
-                    image={selectedProduct.image}
-                    title={selectedProduct.title}
-                    description={selectedProduct.description}
-                    onClose={closePopup}
-                    onNavigate={navigateToDetailPage}
-                />
-            )}
         </div>
     );
 }

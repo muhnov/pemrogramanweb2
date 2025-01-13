@@ -4,7 +4,7 @@ import '../css/EditPhoto.css';
 function EditPhoto() {
     return (
         <div className="edit-photo-container">
-            <h1 className="edit-photo-title">Edit Photo</h1>
+            <h1 className="edit-photo-title">Upload Photo</h1>
             <form className="edit-photo-form">
                 <label htmlFor="photo-title">Photo Title:</label>
                 <input type="text" id="photo-title" name="photo-title" placeholder="Enter new title" />

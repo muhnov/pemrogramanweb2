@@ -34,14 +34,14 @@ function About() {
                     )}
                 </div>
             </header>
-            
+
             <section className="about-content">
                 <div className="about-text">
                     <h1>Tentang</h1>
-                    <p>Welcome to our website! We are dedicated to providing high-quality products that bring joy and inspiration to your life.</p>
+                    <p>Website ini adalah proyek yang dikembangkan oleh mahasiswa Universitas Duta Bangsa, khususnya program studi S1 Teknik Informatika. Website ini dirancang untuk menjadi platform berbagi foto yang memungkinkan pengguna dapat melihat foto, dan mencari inforamsi tentang udb secara mudah.</p>
                     <div className="about-section">
                         <h2>Tujuan</h2>
-                        <p>To deliver exceptional quality and unforgettable experiences through our carefully curated products.</p>
+                        <p>Tujuan pembuatan website gallery UDB adalah untuk menyediakan platform digital yang dapat menampilkan berbagai karya mahasiswa secara terorganisir dan mudah diakses. Website ini bertujuan untuk menjadi wadah apresiasi, inspirasi, dan dokumentasi bagi karya kreatif mahasiswa, terutama dalam bidang teknologi informasi dan desain. Selain itu, platform ini diharapkan dapat memperkuat identitas universitas sebagai institusi yang mendukung inovasi dan kreativitas, serta mempermudah kolaborasi dan interaksi antar mahasiswa, dosen, dan pihak eksternal. Melalui website ini, mahasiswa dapat mengembangkan kemampuan teknis, manajerial, dan kreatif dalam membangun aplikasi berbasis web yang fungsional dan estetis.</p>
                     </div>
                 </div>
                 <div className="about-image">

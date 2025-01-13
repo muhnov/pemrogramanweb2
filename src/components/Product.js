@@ -1,10 +1,12 @@
-// src/components/Product.js
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../css/product.css';
 
 function Product() {
     const [isProfileMenuOpen, setProfileMenuOpen] = useState(false);
+    const [selectedProduct, setSelectedProduct] = useState(null);
+    const [userComments, setUserComments] = useState([]);
+    const [newComment, setNewComment] = useState('');
 
     const toggleProfileMenu = () => {
         setProfileMenuOpen(!isProfileMenuOpen);
@@ -14,11 +16,55 @@ function Product() {
         setProfileMenuOpen(false);
     };
 
+    const openProductPopup = (product) => {
+        setSelectedProduct(product);
+        setUserComments(product.comments || []); // Load predefined comments for the product
+    };
+
+    const closeProductPopup = () => {
+        setSelectedProduct(null);
+        setUserComments([]);
+    };
+
+    const handleAddComment = () => {
+        if (newComment.trim()) {
+            const updatedComments = [...userComments, { user: 'You', comment: newComment }];
+            setUserComments(updatedComments);
+            setNewComment('');
+        }
+    };
+
+    const products = [
+        {
+            id: 1,
+            category: 'Prestasi',
+            src: '/photo/prestasi.jpg',
+            alt: 'Product A',
+            description: 'Deskripsi Prestasi 1',
+            comments: [
+                { user: 'User1', comment: 'Keren sekali!' },
+                { user: 'User2', comment: 'Saya sangat terinspirasi.' },
+            ],
+        },
+        {
+            id: 2,
+            category: 'Prestasi',
+            src: '/photo/prestasi1.jpg',
+            alt: 'Product B',
+            description: 'Deskripsi Prestasi 2',
+            comments: [
+                { user: 'User3', comment: 'Foto yang mengesankan!' },
+                { user: 'User4', comment: 'Luar biasa, semangat selalu!' },
+            ],
+        },
+        // Produk lainnya
+    ];
+
     return (
-        <div className="container-product"> 
+        <div className="container-product">
             <header className="header-product">
-            <div className="logo">
-                <img src='/udblogo.png'></img>
+                <div className="logo">
+                    <img src="/udblogo.png" alt="Logo UDB" />
                 </div>
                 <nav className="navbar-product">
                     <Link to="/home" className="nav-link">Home</Link>
@@ -36,59 +82,57 @@ function Product() {
                     )}
                 </div>
             </header>
-            
+
             <section className="product-content">
-            <div className='main'>
-            <h1>Gallery Product</h1>
-            <p>Universitas Duta Bangsa Surakarta</p>
-            </div>
+                <div className="main">
+                    <h1>Gallery Product</h1>
+                    <p>Universitas Duta Bangsa Surakarta</p>
+                </div>
                 <div className="product-gallery">
-                    <div className="product-item">
-                        <h3>Prestasi</h3>
-                        <img src="/photo/prestasi.jpg" alt="Product A" />
-                    </div>
-                    <div className="product-item">
-                        <h3>Prestasi</h3>
-                        <img src="/photo/prestasi1.jpg" alt="Product B" />
-                    </div>
-                    <div className="product-item">
-                        <h3>Prestasi</h3>
-                        <img src="/photo/prestasi2.jpg" alt="Product C" />
-                    </div>
-                    <div className="product-item">
-                        <h3>Aktivitas</h3>
-                        <img src="/photo/aktivitas.jpg" alt="Product D" />
-                    </div>
-                    <div className="product-item">
-                        <h3>Aktivitas</h3>
-                        <img src="/photo/aktivitas1.jpg" alt="Product E" />
-                    </div>
-                    <div className="product-item">
-                        <h3>Pendaftaran</h3>
-                        <img src="/photo/pendaftaran.jpg" alt="Product F" />
-                    </div>
-                    <div className="product-item">
-                        <h3>Pendaftaran</h3>
-                        <img src="/photo/pendaftaran1.jpg" alt="Product F" />
-                    </div>
-                    <div className="product-item">
-                        <h3>Pendaftaran</h3>
-                        <img src="/photo/pendaftaran2.jpg" alt="Product F" />
-                    </div>
-                    <div className="product-item">
-                        <h3>Pendaftaran</h3>
-                        <img src="/photo/pendaftaran3.jpg" alt="Product F" />
-                    </div>
-                    <div className="product-item">
-                        <h3>Pendaftaran</h3>
-                        <img src="/photo/pendaftaran4.jpg" alt="Product F" />
-                    </div>
-                    <div className="product-item">
-                        <h3>Pendaftaran</h3>
-                        <img src="/photo/pendaftaran5.jpg" alt="Product F" />
-                    </div>
+                    {products.map((product) => (
+                        <div
+                            key={product.id}
+                            className="product-item"
+                            onClick={() => openProductPopup(product)}
+                        >
+                            <h3>{product.category}</h3>
+                            <img src={product.src} alt={product.alt} />
+                        </div>
+                    ))}
                 </div>
             </section>
+
+            {selectedProduct && (
+                <div className="product-popup">
+                    <div className="popup-content">
+                        <button className="close-popup" onClick={closeProductPopup}>×</button>
+                        <div className="popup-left">
+                            <img src={selectedProduct.src} alt={selectedProduct.alt} />
+                        </div>
+                        <div className="popup-right">
+                            <h3>{selectedProduct.category}</h3>
+                            <p>{selectedProduct.description}</p>
+                            <div className="comment-section">
+                                <h4>Comments</h4>
+                                <ul>
+                                    {userComments.map((comment, index) => (
+                                        <li key={index}>
+                                            <strong>{comment.user}:</strong> {comment.comment}
+                                        </li>
+                                    ))}
+                                </ul>
+                                <input
+                                    type="text"
+                                    value={newComment}
+                                    onChange={(e) => setNewComment(e.target.value)}
+                                    placeholder="Add a comment"
+                                />
+                                <button onClick={handleAddComment}>Submit</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            )}
         </div>
     );
 }

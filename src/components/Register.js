@@ -1,20 +1,49 @@
-// src/components/Register.js
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useContext } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import axios from 'axios';
+import { AuthContext } from '../contexts/AuthContext';
 import '../css/Register.css';
 
 const Register = () => {
+    const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [confirmPassword, setConfirmPassword] = useState('');
+    const navigate = useNavigate();
+    const { login } = useContext(AuthContext);
 
-    const handleRegister = (e) => {
+    const handleRegister = async (e) => {
         e.preventDefault();
-        if (password !== confirmPassword) {
-            alert('Password tidak cocok');
-            return;
+
+        try {
+            const registerResponse = await axios.post('http://localhost:4000/api/register', {
+                username,
+                email,
+                password
+            });
+
+            if (registerResponse.status === 201) {
+                // Registrasi berhasil, lakukan login otomatis
+                const loginResponse = await axios.post('http://localhost:4000/api/login', {
+                    email,
+                    password
+                });
+
+                if (loginResponse.data.isAdmin) {
+                    login(loginResponse.data);
+                    navigate('/dashboard');
+                } else if (loginResponse.data.isUser) {
+                    login(loginResponse.data);
+                    navigate('/home');
+                } else {
+                    alert('Login gagal setelah registrasi');
+                }
+            } else {
+                alert('Registrasi gagal');
+            }
+        } catch (error) {
+            console.error('Error during registration or login:', error);
+            alert('Registrasi atau login gagal');
         }
-        console.log('Register dengan:', { email, password });
     };
 
     return (
@@ -22,6 +51,14 @@ const Register = () => {
             <div className="register-box">
                 <h2>Register</h2>
                 <form onSubmit={handleRegister}>
+                    <label>Username:</label>
+                    <input 
+                        type="text" 
+                        value={username} 
+                        onChange={(e) => setUsername(e.target.value)} 
+                        required 
+                    />
+
                     <label>Email:</label>
                     <input 
                         type="email" 
@@ -35,14 +72,6 @@ const Register = () => {
                         type="password" 
                         value={password} 
                         onChange={(e) => setPassword(e.target.value)} 
-                        required 
-                    />
-
-                    <label>Confirm Password:</label>
-                    <input 
-                        type="password" 
-                        value={confirmPassword} 
-                        onChange={(e) => setConfirmPassword(e.target.value)} 
                         required 
                     />
 

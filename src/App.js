@@ -1,6 +1,7 @@
 // src/AppRouter.js
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import AuthProvider from './contexts/AuthContext';
 import Login from './components/login';
 import Register from './components/Register';
 import Home from './components/Home';
@@ -16,6 +17,7 @@ import DeletePhoto from './components/DeletePhoto';
 import EditPhoto from './components/EditPhoto';
 const App = () => {
     return (
+        <AuthProvider>
         <Router>
             <Routes>
                 <Route path="/login" element={<Login />} />
@@ -35,6 +37,7 @@ const App = () => {
                 <Route path="/" element={<Login />} /> {/* Default route ke login */}
             </Routes>
         </Router>
+        </AuthProvider>
     );
 };
 

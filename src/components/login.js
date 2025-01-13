@@ -1,40 +1,34 @@
-// src/components/Login.js
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import axios from 'axios';
 import '../css/Login.css';
-
 
 const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
 
-    const handleLogin = (e) => {
+    const handleLogin = async (e) => {
         e.preventDefault();
 
-        const isAdmin = email === 'admin@gmail.com' && password === 'adminpass';
-        const isUser = email !== '' && password === 'userpass';
-        
-        if (isAdmin) {
-            // Navigasi ke halaman Admin Dashboard
-            navigate('/dashboard');
-        } else if (isUser) {
-            // Navigasi ke halaman Beranda Pengguna
-            navigate('/home');
-        } else {
+        try {
+            const response = await axios.post('http://localhost:4000/api/login', {
+                email,
+                password
+            });
+
+            if (response.data.isAdmin) {
+                navigate('/dashboard');
+            } else if (response.data.isUser) {
+                navigate('/home');
+            } else {
+                alert('Login gagal, periksa email dan password Anda');
+            }
+        } catch (error) {
+            console.error('Error during login:', error);
             alert('Login gagal, periksa email dan password Anda');
         }
-        
     };
-
-    // const handleLogin = (e) => {
-    //     e.preventDefault();
-    //     // Logika login bisa ditambahkan di sini
-    //     console.log('Login dengan:', { email, password });
-
-    //     // Setelah login sukses, arahkan ke halaman beranda
-    //     navigate('/Dashboard');
-    // };
 
     return (
         <div className="login-container">
@@ -65,4 +59,4 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default Login;   

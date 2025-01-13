@@ -1,0 +1,74 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "Produk Crud",
+    "collectionId": "bbe7d750-204e-48f9-a607-a80c4ae132dc",
+    "dateExported": "2024-12-02T12:41:33.781Z",
+    "version": "1.2",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "94993d94-8fb7-4668-bf49-c58431f72e0e",
+            "colId": "bbe7d750-204e-48f9-a607-a80c4ae132dc",
+            "containerId": "",
+            "name": "add produk",
+            "url": "http://localhost:3001/api/users",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-12-02T12:41:00.197Z",
+            "modified": "2024-12-02T12:41:00.197Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\":\"produk2\",\n    \"price\":20000,\n    \"stock\":30\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "5fd6a164-a16f-40b5-b4f0-931a81e33cec",
+            "colId": "bbe7d750-204e-48f9-a607-a80c4ae132dc",
+            "containerId": "",
+            "name": "delete produk",
+            "url": "http://localhost:3001/api/products/1",
+            "method": "DELETE",
+            "sortNum": 20000,
+            "created": "2024-12-02T12:41:09.385Z",
+            "modified": "2024-12-02T12:41:09.385Z",
+            "headers": []
+        },
+        {
+            "_id": "2e8c437e-cef7-43d4-93cb-bf84a82477d1",
+            "colId": "bbe7d750-204e-48f9-a607-a80c4ae132dc",
+            "containerId": "",
+            "name": "edit produk",
+            "url": "http://localhost:3001/api/products/1",
+            "method": "PUT",
+            "sortNum": 30000,
+            "created": "2024-12-02T12:41:16.169Z",
+            "modified": "2024-12-02T12:41:16.169Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\":\"produk2 edit\",\n    \"price\":20000,\n    \"stock\":30\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "befad10b-2471-4638-960d-b60b27db4c11",
+            "colId": "bbe7d750-204e-48f9-a607-a80c4ae132dc",
+            "containerId": "",
+            "name": "add produk",
+            "url": "http://localhost:3001/api/products",
+            "method": "POST",
+            "sortNum": 40000,
+            "created": "2024-12-02T12:41:23.168Z",
+            "modified": "2024-12-02T12:41:23.168Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\":\"produk2\",\n    \"price\":20000,\n    \"stock\":30\n}",
+                "form": []
+            }
+        }
+    ],
+    "ref": "XCqpT56RJ0rF1IXolTKFnJje51wh5r2NjXkTVuDBU97se80kYYIO4CJF1EK1a09i8hreje6fDvaQpwpa377uLQ"
+}
